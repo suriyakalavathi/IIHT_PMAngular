@@ -1,17 +1,16 @@
 <div class="container">
-
-    <div class="form-group row">
+           <p>Select project to view tasks.</p>
+       <div class="form-group row">
         <label for="projectName" class="col-sm-2 col-form-label">Project:</label>
         <div class="col-sm-10">
             <select class="mdb-select" name="project" [(ngModel)]="projectId" (change)="pickProjectId()" searchable="Search here..">
                 <option class="rounded-circle" *ngFor="let project of projects" value="{{project.projectId}}">{{project.name}}</option>
             </select>
         </div>
-    </div>
-
+    </div>   
     <div class="top-buffer container">
-        <p>Tasks for the selected project. Sortable by columns</p>
-    </div>
+        <p><b>TASK LIST: </b>Click Header for sorting</p>
+    </div> 
     <div class="mat-sort-header-container">
         <table class="table" matSort (matSortChange)="sortTasks($event)">
             <thead>
@@ -33,8 +32,8 @@
                     <td>{{task.endDate | date:'MM/dd/yyyy'}}</td>
                     <td><input type="checkbox" [(ngModel)]="task.status" disabled="true"/></td>
                     <td>
-                        <button class="btn btn-success mr-2" (click)='editTask(task.projectId, task.taskId)'>Edit</button>
-                        <button class="btn btn-warning" (click)='endTask(task.taskId)'>End</button>
+                        <button class="btn btn-info mr-2" (click)='editTask(task.projectId, task.taskId)'>Edit</button>
+                        <button class="btn btn-danger" (click)='endTask(task.taskId)'>End</button>
                     </td>
                 </tr>
             </tbody>

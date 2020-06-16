@@ -1,5 +1,5 @@
 <div class="container">
-
+    <p><b>ADD PROJECT :</b></p>
     <div class="alert alert-warning" *ngIf="projectForm.dirty && projectForm.invalid">Please fill all fields</div>
     <div class="alert alert-warning" *ngIf="projectForm.dirty && name.invalid">Min 4 chars in Project name</div>
     <div class="alert alert-warning" *ngIf="projectForm.dirty && (startDate.invalid || isStartDateError)">Start date must be current date or later</div>
@@ -43,11 +43,11 @@
         </div>
 
         <button class="btn btn-success mr-2" type="submit">{{addOrUpdateButtonText}}</button>
-        <button class="btn btn-success" type="reset" (click)="resetForm()">Reset</button>        
+        <button class="btn btn-warning" type="reset" (click)="resetForm()">Reset</button>        
     </form>
 
     <div class="top-buffer container">
-        <p>Projects in the system. Sortable by columns</p>
+        <p><b>PROJECT LIST:</b> Click Header for Sorting</p>
     </div>
     <div class="mat-sort-header-container">
         <table class="table" matSort (matSortChange)="sortProjects($event)">
@@ -55,7 +55,7 @@
                 <tr>
                     <th mat-sort-header="project">Project</th>
                     <th mat-sort-header="priority">priority</th>
-                    <th mat-sort-header="tasks">Tasks</th>
+                    <th mat-sort-header="tasks">Number Of Tasks</th>
                     <th mat-sort-header="startDate">Start Date</th>
                     <th mat-sort-header="endDate">End Date</th>
                     <th mat-sort-header="completed">Completed</th>
@@ -70,8 +70,8 @@
                     <td>{{project.endDate}}</td>
                     <td>{{project.completed}}</td>
                     <td>
-                        <button class="btn btn-success mr-2" (click)='editProject(project.projectId)'>Edit</button>
-                        <button class="btn btn-warning" (click)='deleteProject(project.projectId)'>Delete</button>
+                        <button class="btn btn-info mr-2" (click)='editProject(project.projectId)'>Edit</button>
+                        <button class="btn btn-danger" (click)='deleteProject(project.projectId)'>Delete</button>
                     </td>
                 </tr>
             </tbody>
