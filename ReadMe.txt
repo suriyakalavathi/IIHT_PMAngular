@@ -9,7 +9,7 @@ Application structure & steps to build and run
 2.	GitHub
 	Source code is available in below GitHub. 
 		UI: https://github.com/Suriyakalavathi/IIHT_PMAngular
-		API/Service: https://github.com/Suriyakalavathi/IIHT_PMSpringBootService
+		API/Service: https://github.com/Suriyakalavathi/IIHT_PMSpringBoot_Service
 3.	Execution Steps
 		Start MySQL - //localhost:3306/pm
 		Run API/Service from STS
