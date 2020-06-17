@@ -1,5 +1,5 @@
 <div class="container">
-    <p><b>ADD PROJECT :</b></p>
+    <h5><p><b>ADD PROJECT :</b></p></h5>
     <div class="alert alert-warning" *ngIf="projectForm.dirty && projectForm.invalid">Please fill all fields</div>
     <div class="alert alert-warning" *ngIf="projectForm.dirty && name.invalid">Min 4 chars in Project name</div>
     <div class="alert alert-warning" *ngIf="projectForm.dirty && (startDate.invalid || isStartDateError)">Start date must be current date or later</div>
@@ -47,7 +47,7 @@
     </form>
 
     <div class="top-buffer container">
-        <p><b>PROJECT LIST:</b> Click Header for Sorting</p>
+        <h5><p><b>VIEW PROJECTS:</b> Click Header for Sorting</p></h5>
     </div>
     <div class="mat-sort-header-container">
         <table class="table" matSort (matSortChange)="sortProjects($event)">
@@ -70,8 +70,8 @@
                     <td>{{project.endDate}}</td>
                     <td>{{project.completed}}</td>
                     <td>
-                        <button class="btn btn-info mr-2" (click)='editProject(project.projectId)'>Edit</button>
-                        <button class="btn btn-danger" (click)='deleteProject(project.projectId)'>Delete</button>
+                        <button class="btn btn-info mr-2" (click)='editProject(project.projectId)'>Update</button>
+                        <button class="btn btn-danger" (click)='deleteProject(project.projectId)'>Suspend</button>
                     </td>
                 </tr>
             </tbody>

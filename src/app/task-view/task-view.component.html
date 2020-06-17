@@ -9,7 +9,7 @@
         </div>
     </div>   
     <div class="top-buffer container">
-        <p><b>TASK LIST: </b>Click Header for sorting</p>
+        <h5><p><b>TASK LIST: </b>Click Header for sorting</p></h5>
     </div> 
     <div class="mat-sort-header-container">
         <table class="table" matSort (matSortChange)="sortTasks($event)">
@@ -33,7 +33,7 @@
                     <td><input type="checkbox" [(ngModel)]="task.status" disabled="true"/></td>
                     <td>
                         <button class="btn btn-info mr-2" (click)='editTask(task.projectId, task.taskId)'>Edit</button>
-                        <button class="btn btn-danger" (click)='endTask(task.taskId)'>End</button>
+                        <button class="btn btn-danger" (click)='endTask(task.taskId)'>End Task</button>
                     </td>
                 </tr>
             </tbody>

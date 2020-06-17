@@ -1,12 +1,10 @@
 <div class="container">
-
+    <h5><p><b>ADD USER :</b></p></h5>
     <div class="alert alert-warning" *ngIf="userForm.dirty && userForm.invalid">Please fill all fields</div>
     <div class="alert alert-warning" *ngIf="userForm.dirty && employeeId.invalid">Min 1 chars in Employee ID</div>
     <div class="alert alert-warning" *ngIf="userForm.dirty && firstName.invalid">Min 4 chars in First Name</div>
     <div class="alert alert-warning" *ngIf="userForm.dirty && lastName.invalid">Min 4 chars in Last Name</div>
-    <div class="top-buffer container">
-    <p><b>ADD USER :</b></p>
-    </div>
+ 
     <form (ngSubmit)="!userForm.invalid && addUser()" #userForm="ngForm">
         <fieldset class="form=group">
             <label>Employee ID:</label>
@@ -28,7 +26,7 @@
     </form>
 
     <div class="top-buffer container">
-        <p><b>USER LIST:</b> Click Header for Sorting</p>
+        <h5><p><b>VIEW USER:</b> Click Header for Sorting</p></h5>
     </div>
     <div class="mat-sort-header-container">
         <table class="table" matSort (matSortChange)="sortUsers($event)">
